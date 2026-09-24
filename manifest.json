@@ -5,7 +5,8 @@
   "description": "按住 Alt 键滚动滚轮即可在标签页之间连续切换，完美支持垂直标签页与即时变向。",
   "permissions": [
     "tabs",
-    "storage"
+    "storage",
+    "tabGroups"
   ],
   "host_permissions": [
     "<all_urls>"

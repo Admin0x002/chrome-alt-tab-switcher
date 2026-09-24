@@ -31,6 +31,16 @@
       <input type="radio" name="viewMode" value="off"> 极速静默切换 (无浮窗)
     </label>
   </div>
+  <div class="section">
+    <div class="title">标签页排序模式</div>
+    <label>
+      <input type="radio" name="sortMode" value="mru" checked> 最近使用顺序 (MRU - 推荐)
+    </label>
+    <div class="tip" style="margin-left: 20px; margin-bottom: 6px;">按最近访问时间排列，实现当前页与上一页面之间单格极速横跳。</div>
+    <label>
+      <input type="radio" name="sortMode" value="index"> 标签栏物理顺序 (从左到右)
+    </label>
+  </div>
 
   <div class="section">
     <div class="title">滚轮触发机制 (针对游戏鼠标优化)</div>
@@ -55,6 +65,19 @@
     <div class="title">方向与循环</div>
     <label><input type="checkbox" id="invertDirection"> 反转滚动方向</label>
     <label><input type="checkbox" id="loopTabs" checked> 首尾循环切换</label>
+  </div>
+  <div class="section">
+    <div class="title">HUD 交互细节</div>
+    <label><input type="checkbox" id="mouseHoverSelect" checked> 允许鼠标移动时跟随高亮</label>
+    <div id="hoverThresholdContainer" style="margin-left: 20px; margin-bottom: 8px;">
+      <div class="tip" style="margin-bottom: 4px;">
+        防误触移动阈值: <span id="valMouseHoverThreshold" style="color: #2563eb; font-weight: 600;">10</span> px
+      </div>
+      <input type="range" id="mouseHoverThreshold" min="0" max="60" step="2" value="10">
+      <div class="tip">HUD 刚呼出时光标需移动超过此距离才会切换高亮，设为 0 表示不防误触即刻跟随。</div>
+    </div>
+    <label><input type="checkbox" id="altArrowTrigger" checked> 允许 Alt + ↑ / ↓ 键触发与切换</label>
+    <div class="tip" style="margin-left: 20px;">支持在按住 Alt 时按方向键直接唤出 HUD 并移动选择。</div>
   </div>
 
   <div id="status" class="status"></div>
