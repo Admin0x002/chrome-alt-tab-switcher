@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>标签页切换设置</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      padding: 16px; width: 340px; color: #333; margin: 0; line-height: 1.5;
+    }
+    h3 { margin-top: 0; font-size: 15px; border-bottom: 1px solid #eee; padding-bottom: 8px; }
+    .section { margin-bottom: 14px; }
+    .title { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+    label { display: flex; align-items: center; cursor: pointer; font-size: 13px; margin-bottom: 5px; }
+    input[type="checkbox"], input[type="radio"] { margin-right: 8px; }
+    input[type="range"] { width: 100%; margin-top: 4px; }
+    .tip { font-size: 11px; color: #777; margin-top: 2px; }
+    .status { color: #2e7d32; font-size: 12px; height: 16px; font-weight: 500; margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <h3>Alt + 滚轮切换偏好设置</h3>
+
+  <div class="section">
+    <div class="title">切换视图效果 (HUD)</div>
+    <label>
+      <input type="radio" name="viewMode" value="classic"> 类似系统 Alt+Tab 浮窗 (推荐)
+    </label>
+    <div class="tip" style="margin-left: 20px; margin-bottom: 6px;">按住 Alt 滚轮浏览所有标题/图标，松开 Alt 瞬间激活所选标签页。</div>
+    <label>
+      <input type="radio" name="viewMode" value="off"> 极速静默切换 (无浮窗)
+    </label>
+  </div>
+
+  <div class="section">
+    <div class="title">滚轮触发机制 (针对游戏鼠标优化)</div>
+    <label>
+      <input type="radio" name="triggerMode" value="strict"> 严格段落刻度模式 (G502 X 专属推荐)
+    </label>
+    <div class="tip" style="margin-left: 20px; margin-bottom: 6px;">忽略未转满一格前的轻微触碰晃动，只有物理刻度到位才触发。</div>
+    <label>
+      <input type="radio" name="triggerMode" value="accumulate"> 平滑累加模式 (适合触控板/无阻尼滚轮)
+    </label>
+  </div>
+
+  <div class="section">
+    <div class="title">
+      灵敏度阈值: <span id="valSensitivity" style="color: #2563eb;">100</span>
+    </div>
+    <input type="range" id="sensitivity" min="40" max="200" step="5" value="100">
+    <div class="tip">G502 X 段落模式推荐设为 90~120。若觉得太重可调低，太轻可调高。</div>
+  </div>
+
+  <div class="section">
+    <div class="title">方向与循环</div>
+    <label><input type="checkbox" id="invertDirection"> 反转滚动方向</label>
+    <label><input type="checkbox" id="loopTabs" checked> 首尾循环切换</label>
+  </div>
+
+  <div id="status" class="status"></div>
+
+  <script src="options.js"></script>
+</body>
+</html>

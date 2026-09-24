@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Alt + 滚轮标签页切换器",
+  "version": "1.0.0",
+  "description": "按住 Alt 键滚动滚轮即可在标签页之间连续切换，完美支持垂直标签页与即时变向。",
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  }
+}
